@@ -1,6 +1,6 @@
 # SANS Holiday Hack 2018 Writeup
 
-Enclosed is my writeup for the SANS Holiday Hack 2018 (https://www.holidayhackchallenge.com/2018/). With the exception of one challenge, this hack wasn't particularly tough - mostly because SANS provided pretty obvious hints for each of the challenges. Thats not to say I didn't learn anything - most of the challenges were interesting and ventured into topics I don't normally encounter so I ended up learning a good deal.
+Enclosed is my writeup for the SANS Holiday Hack 2018 (https://www.holidayhackchallenge.com/2018/). With the exception of one challenge, this hack wasn't particularly tough - mostly because SANS provided pretty obvious hints for each of the challenges. That's not to say I didn't learn anything - most of the challenges were interesting and ventured into topics I don't normally encounter so I ended up learning a good deal.
 
 ## The Game
 

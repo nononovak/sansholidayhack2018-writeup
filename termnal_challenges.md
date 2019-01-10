@@ -1,6 +1,6 @@
 # Terminal Challenges
 
-The terminal challenges were scattered around the the Kringlecon arena. Each of them had an elf who was giving hints as to how to solve the challenge. In most cases these hints were straightforward and each terminal challenge could be solved without much headache. The solutions for each are given below.
+The terminal challenges were scattered around the Kringlecon arena. Each of them had an elf who was giving hints as to how to solve the challenge. In most cases these hints were straightforward, and each terminal challenge could be solved without much headache. The solutions for each are given below.
 
 ## Essential Editor Skills
 
@@ -369,7 +369,7 @@ Did our young Romeo leave one for you?
 elf@e3906b9b8921:~$ 
 ```
 
-The hint for this challenge is that we're supposed to look for remenants left by a text editor (`vim` in this case). Doing some file listing on the machine shows that there is a poem located at `~/.secrets/her/poem.txt` without the name `NEVERMORE`. Looking a little bit further we see that there is a `~/.viminfo` file which lists a global replace of `Elinore` with `NEVERMORE`.
+The hint for this challenge is that we're supposed to look for remnants left by a text editor (`vim` in this case). Doing some file listing on the machine shows that there is a poem located at `~/.secrets/her/poem.txt` with the name `NEVERMORE`. Looking a little bit further we see that there is a `~/.viminfo` file which contains a global replace of `Elinore` with `NEVERMORE`.
 
 ```
 lf@e3906b9b8921:~$ cat .viminfo 
@@ -409,10 +409,7 @@ Entering this name into `./runtoanswer` completes the challenge:
 elf@e3906b9b8921:~$ ./runtoanswer 
 Loading, please wait......
 
-
-
 Who was the poem written about? Elinore
-
 
 WWNXXK00OOkkxddoolllcc::;;;,,,'''.............                                 
 WWNXXK00OOkkxddoolllcc::;;;,,,'''.............                                 
@@ -630,7 +627,7 @@ $ curl http://localhost:8080/
 elf@40c9af7d617e:~$ 
 ```
 
-However, if we dive into the curl manpage we see that there is an option for `--http2-prior-knowledge` which will skip the `HTTP 1.1` upgrade step and go straight to `HTTP2`. Running curl again with this argument gives us the webpage and prompts us to submit a POST request with `status=on`. Doing the latter again completes the challenge.
+However, if we dive into the curl man page we see that there is an option for `--http2-prior-knowledge` which will skip the `HTTP 1.1` upgrade step and go straight to `HTTP2`. Running curl again with this argument gives us the webpage and prompts us to submit a POST request with `status=on`. Doing the latter again completes the challenge.
 
 ```
 elf@40c9af7d617e:~$ curl --http2-prior-knowledge http://localhost:8080/
@@ -732,7 +729,7 @@ Tell us who fell victim, and please handle this with tact...
 elf@da627e451ca0:~$ 
 ```
 
-This challenge contained an event log and python script I was entirely unfamiliar with. Using the tools to dump the event log to XML and search through them showed that 
+This challenge contained an event log and python script I was entirely unfamiliar with. I used the tools to dump the event log to XML as follows: 
 
 ```
 elf@da627e451ca0:~$ ls -al
@@ -1023,7 +1020,7 @@ Find Sparkle's password, then run the runtoanswer tool.
 elf@2aae781c2b40:~$ 
 ```
 
-The hint for this one was to find the password accidentally committed to git and later removed. Navigating to the repo directory and running `git log` shows one message which hints at a commit made in error. Using this we can checkout the change directly before this commit, find the `config.js` file and then find the password.
+The hint for this one was to find the password accidentally committed to git and later removed. Navigating to the repo directory and running `git log` shows one message which hints at a commit made in error. Using this we can check out the change directly before this commit, find the `config.js` file and then find the password.
 
 ```
 elf@2aae781c2b40:~$ cd kcconfmgmt/
@@ -1073,10 +1070,7 @@ Using this with `./runtoanswer` completes the challenge:
 elf@2aae781c2b40:~$ ./runtoanswer 
 Loading, please wait......
 
-
-
 Enter Sparkle Redberry's password: twinkletwinkletwinkle
-
 
 This ain't "I told you so" time, but it's true:
 I shake my head at the goofs we go through.
@@ -1341,7 +1335,7 @@ elf@81ac32c6b430:~$ objdump -d ./sleighbell-lotto
 ...
 ```
 
-We can see that by line `154c`, the function has called `rand()`, done some arithmetic, and is storing the variable off for later use. If we set a breakpoint at this address and change a variable then this should give us the answer. Using `gdb` this is straightforward as shown below:
+We can see that by line `154c`, the function has called `rand()`, done some arithmetic, and is storing the variable off for later use. If we set a breakpoint at this address and change a variable, then this should give us the answer. Using `gdb` this is straightforward as shown below:
 
 ```
 elf@81ac32c6b430:~$ gdb ./sleighbell-lotto 
